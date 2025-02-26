@@ -14,16 +14,19 @@
   become: true
   gather_facts: false
 
-  roles:
-    # Download cloud-init images
-    - download_cloud_init_images
-    # Create cloud-init files
-    - create_user_files
+  tasks:
+    - name: Download cloud image
+      ansible.builtin.import_role:
+        name: plano.proxmox.download_cloud_init_images
+    - name: Create user files
+      ansible.builtin.import_role:
+        name: plano.proxmox.create_user_files
 
 - hosts: pvenodes[0]
   become: false
   gather_facts: false
 
-  roles:
-    # Create VMs
-    - create_vms
+  tasks:
+    - name: Create VMs
+      ansible.builtin.import_role:
+        name: plano.proxmox.create_vms
