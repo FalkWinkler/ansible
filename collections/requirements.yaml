@@ -3,10 +3,6 @@ collections:
   - name: community.general
   - name: containers.podman
   - name: ansible.posix
-  - name: plano.k8s
-    source: ./plano/k8s/
-    type: dir
-
   - name: https://github.com/kubernetes-sigs/kubespray
     type: git
     version: master
