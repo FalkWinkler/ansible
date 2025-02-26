@@ -1,0 +1,7 @@
+{
+    "ansible.python.interpreterPath": "/bin/python3.11",
+    "ansible.ansible.path": "ansible",
+    "ansible.ansible.useFullyQualifiedCollectionNames": true,
+    "ansible.ansibleLint.path": "ansible-lint",
+    "ansible.executionEnvironment.enabled": false
+}

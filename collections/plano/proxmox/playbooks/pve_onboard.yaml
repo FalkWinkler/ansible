@@ -1,0 +1,31 @@
+---
+- name: Onboard Proxmox
+  hosts: proxmox
+  gather_facts: false
+
+  tasks:
+    - name: Install sudo package
+      ansible.builtin.apt:
+        name: sudo
+        update_cache: true
+        cache_valid_time: 3600
+        state: present
+
+    - name: Create Ansible user
+      ansible.builtin.user:
+        name: ansible
+        shell: /bin/bash
+
+    - name: Add Ansible ssh key
+      ansible.posix.authorized_key:
+        user: ansible
+        state: present
+        key: "{{ vault.ansible_ssh_key }}"
+
+    - name: Add Ansible user to sudoers
+      ansible.builtin.copy:
+        src: sudoer_ansible
+        dest: /etc/sudoers.d/ansible
+        owner: root
+        group: root
+        mode: "0440"

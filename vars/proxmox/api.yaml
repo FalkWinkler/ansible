@@ -1,0 +1,7 @@
+---
+proxmox_api_host: pve1
+proxmox_api_user: root@pam
+proxmox_api_token_id: ansible
+proxmox_api_token_secret: "{{ vault.proxmox_api_token_secret }}"
+proxmox_node: pve1
+vm_name: testvm2

@@ -1,0 +1,13 @@
+---
+- name: Install neofatcs
+  hosts: lxc
+  gather_facts: true
+  gather_subset:
+    - "!all"
+    - "!min"
+    - os_family
+
+  tasks:
+    - name: Run neofetch role
+      ansible.builtin.import_role:
+        name: plano.tutorial.neofetch

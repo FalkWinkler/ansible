@@ -1,0 +1,6 @@
+---
+vault:
+  ansible_user_password: admin@123
+  ansible_ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII5MTqsklLUz1dF76UcAFJRGxN+AWI87xeIfKyIVwnJG ansible@f-wi.com"
+  proxmox_server_user_password: "Test08121981@123"
+  proxmox_api_token_secret: "2bf4953d-e395-44da-88f8-25e5583ede34"

@@ -1,0 +1,6 @@
+---
+# Prepare Proxmox nodes
+- name: Prepare Proxmox nodes
+  hosts: proxmox
+  roles:
+    - role: plano.proxmox.prepare

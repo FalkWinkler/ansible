@@ -1,0 +1,4 @@
+---
+- name: Install neofetch
+  ansible.builtin.include_tasks:
+    file: "install-{{ ansible_facts.os_family }}.yml"

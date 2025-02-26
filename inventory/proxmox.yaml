@@ -1,0 +1,8 @@
+---
+proxmox:
+  hosts:
+    pve1:
+      ansible_host: 10.20.0.254
+      ansible_user: root
+      ansible_password: "{{ vault.proxmox_server_user_password }}"
+      ansible_become_pass: "{{ vault.proxmox_server_user_password }}"

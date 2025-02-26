@@ -1,0 +1,14 @@
+---
+- name: Prepare k8s-nodes
+  hosts: k8s
+  become: true
+
+  tasks:
+    - name: Install required packages
+      ansible.builtin.include_role:
+        name: plano.k8s.roles.prereq
+
+  # roles:
+  #   - role: plano.k8s.roles.prereq
+  #   - role: plano.k8s.roles.kubespray
+  #   - role: plano.k8s.roles.postreq
